@@ -1924,8 +1924,8 @@
           }
         ],
         "responses": {
-          "404": {
-            "description": "차량 정보를 찾을 수 없음"
+          "500": {
+            "description": "서버 오류"
           },
           "200": {
             "description": "조회 성공",
@@ -1937,8 +1937,8 @@
               }
             }
           },
-          "500": {
-            "description": "서버 오류"
+          "404": {
+            "description": "차량 정보를 찾을 수 없음"
           }
         }
       }
@@ -4162,11 +4162,15 @@
             "description": "데이터 타임스탬프",
             "format": "date-time"
           },
-          "soc": {
-            "type": "number"
+          "SOC": {
+            "type": "number",
+            "description": "배터리 잔량 (%)",
+            "example": 80.5
           },
-          "soh": {
-            "type": "number"
+          "SOH": {
+            "type": "number",
+            "description": "배터리 건강도 (%)",
+            "example": 95.5
           }
         },
         "description": "V2X 배터리 상태 응답 모델"
